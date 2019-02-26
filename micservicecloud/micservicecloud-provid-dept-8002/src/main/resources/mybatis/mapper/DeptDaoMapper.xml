@@ -1,0 +1,20 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dhg.spring.dao.DeptDao">
+	<insert id="addDept">
+		INSERT INTO
+		dept(dname,db_source)
+		values(#{dname},DATABASE());
+	</insert>
+	<select id="findById" resultType="com.dhg.spring.entities.Dept"
+		parameterType="Integer">
+		select
+		*from dept where deptno=#{deptno};
+	</select>
+	<select id="findAll">
+		select *from dept;
+	</select>
+
+</mapper>

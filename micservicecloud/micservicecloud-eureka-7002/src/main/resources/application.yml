@@ -1,0 +1,17 @@
+server:
+  port: 7002
+  
+eureka:
+  server:
+    enable-self-preservation: false #默认的自我保护机制
+  instance:
+    #单机hostname: localhost
+    hostname: eureka7002.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      #单机defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7003.com:7003/eureka/
+      
+    
